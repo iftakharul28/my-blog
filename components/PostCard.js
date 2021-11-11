@@ -4,10 +4,10 @@ import Link from 'next/link';
 const PostCard = ({ post }) => {
   console.log(post);
   return (
-    <div className="bg-green-200 shadow-lg rounded-lg p-0 lg:p-8 pd-12 mb-8">
+    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pd-12 mb-8">
       <div
         className="relative overflow-hidden shadow-md cursor-pointer"
-        style={{ paddingBottom: '56.25%', height: '0' }}
+        style={{ paddingBottom: '56.25%', height: '0', width: '100%' }}
       >
         <Link href={`/post/${post.slug}`}>
           <img
@@ -49,14 +49,12 @@ const PostCard = ({ post }) => {
       <p className="text-center text-lg text-gray-700 font-normal my-8">
         {post.excerpt}
       </p>
-      <Link href={`/post/${post.slug}`} passHref>
-        <button
-          className="bg-red-600 px-4 py-3 mx-auto table text-white text-lg font-normal"
-          style={{ borderRadius: '15px' }}
-        >
-          Read More
-        </button>
-      </Link>
+      <button
+        className="bg-red-600 px-4 py-3 mx-auto table text-white text-lg font-normal"
+        style={{ borderRadius: '15px' }}
+      >
+        <Link href={`/post/${post.slug}`}>Read More</Link>
+      </button>
     </div>
   );
 };
