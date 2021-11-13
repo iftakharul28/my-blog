@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import { PostCard, Categories, PostWidget } from '../components';
 import { getPosts } from '../services';
+import { getFeaturedPosts } from '../services';
+import { FeaturedPosts } from '../section';
 
 export default function Home({ posts }) {
   return (
@@ -9,6 +11,7 @@ export default function Home({ posts }) {
         <title>blog-nextjs</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <FeaturedPosts />
       <div className="lg:grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8">
           {posts.map((post) => (

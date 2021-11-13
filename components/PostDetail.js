@@ -61,8 +61,8 @@ const PostDetail = ({ post }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg">
       <div
-        className="relative overflow-hidden shadow-md cursor-pointer"
-        style={{ paddingBottom: '56.25%', height: '0', width: '100%' }}
+        className="relative overflow-hidden shadow-md w-full"
+        style={{ paddingBottom: '56.25%', height: '0' }}
       >
         <img
           src={post.featuredImage.url}
@@ -70,7 +70,7 @@ const PostDetail = ({ post }) => {
           className="object-cover block absolute w-full h-full inset-0"
         />
       </div>
-      <div className="my-8 mx-4 flex lg:justify-start justify-between items-center lg:gap-3">
+      <div className="my-8 mx-4 lg:mx-8 flex lg:justify-start justify-between items-center lg:gap-3">
         <div className="flex justify-center items-center gap-2 ">
           <img
             className="object-cover rounded-full"
@@ -103,7 +103,7 @@ const PostDetail = ({ post }) => {
       <h1 className="mx-4 mb-4 lg:mx-8 text-3xl font-semibold text-center">
         {post.title}
       </h1>
-      <div className="mx-4 lg:mx-8 mb-4">
+      <div className="mx-4 lg:mx-8">
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) =>
             getContentFragment(itemIndex, item.text, item)
