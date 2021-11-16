@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import moment from 'moment';
 const PostCard = ({ post }) => {
   return (
@@ -7,16 +8,20 @@ const PostCard = ({ post }) => {
         className="relative overflow-hidden shadow-md cursor-pointer"
         style={{ paddingBottom: '56.25%', height: '0', width: '100%' }}
       >
-        <a href={`/post/${post.slug}`}>
-          <img
-            src={post.featuredImage.url}
-            alt={post.title}
-            className="object-cover block absolute w-full h-full inset-0"
-          />
-        </a>
+        <Link href={`/post/${post.slug}`}>
+          <a>
+            <img
+              src={post.featuredImage.url}
+              alt={post.title}
+              className="object-cover block absolute w-full h-full inset-0"
+            />
+          </a>
+        </Link>
       </div>
       <h1 className="text-center my-8 cursor-pointer text-2xl font-semibold">
-        <a href={`/post/${post.slug}`}>{post.title}</a>
+        <Link href={`/post/${post.slug}`}>
+          <a>{post.title}</a>
+        </Link>
       </h1>
       <div className="flex justify-center items-center gap-2 my-8">
         <img
@@ -46,14 +51,16 @@ const PostCard = ({ post }) => {
           {moment(post.createAt).format('MMM DD,YYYY')}
         </span>
       </div>
-      <p className="text-center text-lg text-gray-700 font-normal my-8">
+      <p className="text-center text-base text-gray-700 font-normal my-8">
         {post.excerpt}
       </p>
       <button
-        className="bg-red-600 px-4 py-3 mx-auto table text-white text-lg font-normal"
+        className="bg-red-600 px-4 py-3 mx-auto table text-white font-normal"
         style={{ borderRadius: '15px' }}
       >
-        <a href={`/post/${post.slug}`}>Read More</a>
+        <Link href={`/post/${post.slug}`}>
+          <a className="text-lg">Read More</a>
+        </Link>
       </button>
     </div>
   );

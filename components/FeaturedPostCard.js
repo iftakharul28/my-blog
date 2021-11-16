@@ -32,7 +32,7 @@ const FeaturedPostCard = ({ post }) => (
       </div>
     </div>
     <Link href={`/post/${post.slug}`}>
-      <span className="cursor-pointer absolute w-full h-full" />
+      <a className="cursor-pointer absolute w-full h-full"></a>
     </Link>
   </div>
 );
