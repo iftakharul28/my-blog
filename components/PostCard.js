@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 const PostCard = ({ post }) => {
-  console.log(post);
   return (
     <div className="bg-white shadow-lg rounded-lg p-5 lg:p-8 pd-12 mb-8">
       <div
